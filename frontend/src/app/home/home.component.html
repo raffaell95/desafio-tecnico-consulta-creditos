@@ -1,0 +1,38 @@
+<div class="container mt-4 table-responsive">
+  <table *ngIf="creditos.length; else hasNotData" class="table table-striped table-bordered align-middle">
+    <thead>
+      <tr>
+        <th scope="col">Numero do Credito</th>
+        <th scope="col">Numero Nfse</th>
+        <th scope="col">Data Constituição</th>
+        <th scope="col">Valor Issqn</th>
+        <th scope="col">Tipo de Credito</th>
+        <th scope="col">Simples Nacional</th>
+        <th scope="col">Aliquota</th>
+        <th scope="col">Valor Faturado</th>
+        <th scope="col">Valor de Dedução</th>
+        <th scope="col">Base de Calculo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let credito of creditos">
+        <td>{{credito.numeroCredito}}</td>
+        <td>{{credito.numeroNfse}}</td>
+        <td>{{credito.dataConstituicao | date:'dd/MM/yyyy'}}</td>
+        <td>{{credito.valorIssqn | currency:'BRL'}}</td>
+        <td>{{credito.tipoCredito}}</td>
+        <td>{{credito.simplesNacional ? 'Sim' : 'Não'}}</td>
+        <td>{{credito.aliquota | currency:'BRL'}}</td>
+        <td>{{credito.valorFaturado | currency:'BRL'}}</td>
+        <td>{{credito.valorDeducao | currency:'BRL'}}</td>
+        <td>{{credito.baseCalculo | currency:'BRL'}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #hasNotData>
+    <div class="empty-message">
+      <p>Informe o número da Nfse ou o número de crédito</p>
+    </div>
+  </ng-template>
+</div>
