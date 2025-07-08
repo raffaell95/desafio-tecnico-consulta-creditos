@@ -14,7 +14,7 @@
 
 ### Build
 - O projeto esta conteinerizado em docker
-- Para rodar o o projeto basta rodar o comando `docker-compose up -d`, e pronto 
+- Para rodar o projeto basta entrar no diretorio e rodar o comando `docker compose build --no-cache backend` em seguida `docker-compose up -d`, e pronto 
 no momento que o projeto for inicializado o spring vai gerar automaticamente o banco de dados juntamente com as tabelas e inserir alguns dados de exemplo.
 
 - Portas:
