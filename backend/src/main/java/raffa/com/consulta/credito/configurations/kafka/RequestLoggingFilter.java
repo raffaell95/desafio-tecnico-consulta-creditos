@@ -11,7 +11,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
-@Component
+//@Component
 public class RequestLoggingFilter extends OncePerRequestFilter {
 
     private final KafkaTemplate<String, String> kafkaTemplate;
